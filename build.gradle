@@ -16,7 +16,14 @@ dependencies {
     // spring
     implementation 'org.springframework.boot:spring-boot-starter-web'
 
+    // handlebars
+    implementation 'pl.allegro.tech.boot:handlebars-spring-boot-starter:0.3.0'
+
+    // log
+    implementation 'net.rakugakibox.spring.boot:logback-access-spring-boot-starter:2.7.1'
+
     // test
+    testImplementation 'io.rest-assured:rest-assured:3.3.0'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 

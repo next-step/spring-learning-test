@@ -1,10 +1,19 @@
-# 테스트로 배우는 Spring 학습 테스트
+# Spring MVC Config 학습 테스트
 
-## 학습 테스트 종류
-### [초간단 스프링 프로젝트](https://github.com/next-step/spring-hellowolrd/tree/simple)
-### [Spring MVC](https://github.com/next-step/spring-hellowolrd/tree/mvc)
-### [Spring JDBC](https://github.com/next-step/spring-hellowolrd/tree/jdbc)
-### [Spring CORE](https://github.com/next-step/spring-hellowolrd/tree/core)
-### [Spring MVC Config](https://github.com/next-step/spring-hellowolrd/tree/mvc-config)
-### [Spring Auth](https://github.com/next-step/spring-hellowolrd/tree/auth)
-### [Spring Configuration](https://github.com/next-step/spring-learning-test/tree/config)
+---
+
+## 요약
+### `WebMvcConfiguration` 수정하여 `WebMvcConfigurationTest` 테스트 성공 시키기
+- addViewControllers: "/" 요청 시 hello.html 페이지 응답하기
+- addInterceptors: "/admin/**" 요청 시 LoginInterceptor 동작하게 하기
+- addArgumentResolvers: AuthenticationPrincipalArgumentResolver 등록하기
+
+---
+### `View Controller`
+> https://docs.spring.io/spring-framework/docs/current/reference/html/web.html#mvc-config-view-controller
+
+### `Handler Interceptor`
+> https://docs.spring.io/spring-framework/docs/current/reference/html/web.html#mvc-config-interceptors
+
+### `Handler Method Argument Resolver`
+> https://www.baeldung.com/spring-mvc-custom-data-binder#1-custom-argument-resolver
