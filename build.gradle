@@ -15,15 +15,16 @@ repositories {
 dependencies {
     // spring
     implementation 'org.springframework.boot:spring-boot-starter-web'
-    implementation 'org.springframework.boot:spring-boot-starter-data-jdbc'
+
+    // jwt
+    implementation 'io.jsonwebtoken:jjwt:0.9.1'
 
     // log
     implementation 'net.rakugakibox.spring.boot:logback-access-spring-boot-starter:2.7.1'
 
+    // test
     testImplementation 'io.rest-assured:rest-assured:4.4.0'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
-
-    runtimeOnly 'com.h2database:h2'
 }
 
 test {

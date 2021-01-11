@@ -1,10 +1,17 @@
-# 테스트로 배우는 Spring 학습 테스트
+# Spring Auth 학습 테스트
 
-## 학습 테스트 종류
-### [초간단 스프링 프로젝트](https://github.com/next-step/spring-hellowolrd/tree/simple)
-### [Spring MVC](https://github.com/next-step/spring-hellowolrd/tree/mvc)
-### [Spring JDBC](https://github.com/next-step/spring-hellowolrd/tree/jdbc)
-### [Spring CORE](https://github.com/next-step/spring-hellowolrd/tree/core)
-### [Spring MVC Config](https://github.com/next-step/spring-hellowolrd/tree/mvc-config)
-### [Spring Auth](https://github.com/next-step/spring-hellowolrd/tree/auth)
-### [Spring Configuration](https://github.com/next-step/spring-learning-test/tree/config)
+---
+
+## 요약
+### `AuthController` 수정하여 `AuthControllerTest` 테스트 성공 시키기
+- sessionLogin: session 기반의 로그인 학습 테스트 
+- tokenLogin: token 기반의 로그인 학습 테스트
+
+---
+## Session Login
+
+### `HttpSession`
+> https://www.baeldung.com/spring-security-session#2-injecting-the-raw-session-into-a-controller
+
+### `@RequestParam`이나 `HttpServletRequest` 활용하기
+> https://docs.spring.io/spring-framework/docs/current/reference/html/web.html#mvc-ann-arguments
