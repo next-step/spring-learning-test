@@ -13,7 +13,7 @@ import java.util.List;
 public class MethodArgumentController {
 
     @GetMapping("/users")
-    public ResponseEntity<List<User>> requestParam(String userName) {
+    public ResponseEntity<List<User>> requestParam(@RequestParam("name") String userName) {
         List<User> users = Arrays.asList(
                 new User(userName, "email"),
                 new User(userName, "email")
@@ -22,7 +22,7 @@ public class MethodArgumentController {
     }
 
     @PostMapping("/users/body")
-    public ResponseEntity requestBody(User user) {
+    public ResponseEntity requestBody(@RequestBody User user) {
         User newUser = new User(1L, user.getName(), user.getEmail());
         return ResponseEntity.created(URI.create("/users/" + newUser.getId())).body(newUser);
     }
