@@ -26,7 +26,7 @@ public class MediaTypeTest {
 
     /**
      * MediaTypeController > createUser 메서드
-     * > produces 값으로 APPLICATION_JSON_VALUE 받기
+     * > consumes 값으로 APPLICATION_JSON_VALUE 받기
      */
     @DisplayName("Media Type - Content-Type")
     @Test
@@ -46,7 +46,7 @@ public class MediaTypeTest {
      * MediaTypeController > showUser 메서드
      * MediaTypeController > userPage 메서드
      *
-     * > consumes 값으로 요청 구분하기
+     * > produces 값으로 요청 구분하기
      * > APPLICATION_JSON_VALUE와 TEXT_HTML_VALUE 각각 처리하기
      */
     @DisplayName("Media Type - Accept")
