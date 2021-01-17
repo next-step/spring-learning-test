@@ -20,6 +20,11 @@ class WebMvcConfigurationTest {
         RestAssured.port = port;
     }
 
+    /**
+     * 사용자가 "/"로 요청을 보냈을 때 hello.html이 응답되어야 함
+     * <p>
+     * WebMvcConfiguration의 addViewControllers 메서드로 설정하기
+     */
     @Test
     void addViewControllers() {
         // when
@@ -33,7 +38,12 @@ class WebMvcConfigurationTest {
     }
 
     /**
-     * 관리자 -> 회원 목록 조회 시나리오
+     * 비인가 사용자가 회원 목록 조회를 했을 때 권한이 없다는 응답이 나와야 함
+     * 현재는 모든 사용자가 접근이 가능하지만 LoginInterceptor를 통해 인증 과정을 거치도록 하기
+     * <p>
+     * 디버깅 해보기!
+     * <p>
+     * WebMvcConfiguration의 addInterceptors 메서드로 설정하기
      */
     @Test
     void addInterceptors() {
@@ -46,7 +56,12 @@ class WebMvcConfigurationTest {
     }
 
     /**
-     * 사용자 -> 자신의 즐겨찾기 조회
+     * MvcConfigController에서 @AuthenticationPrincipal LoginMember loginMember 파라미터에 값을 셋팅할 수 있게 설정하기
+     * AuthenticationPrincipalArgumentResolver를 활용하기
+     * <p>
+     * 디버깅 해보기!
+     * <p>
+     * WebMvcConfiguration의 addInterceptors 메서드로 설정하기
      */
     @Test
     void addArgumentResolvers() {
