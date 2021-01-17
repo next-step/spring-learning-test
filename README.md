@@ -5,6 +5,6 @@
 ### 2. [Spring MVC](https://github.com/next-step/spring-hellowolrd/tree/mvc)
 ### 3. [Spring JDBC](https://github.com/next-step/spring-hellowolrd/tree/jdbc)
 ### 4. [Spring CORE](https://github.com/next-step/spring-hellowolrd/tree/core)
-### 5. Spring MVC Config
-### 6. Spring Auth
+### 5. [Spring MVC Config](https://github.com/next-step/spring-hellowolrd/tree/mvc-config)
+### 6. [Spring Auth](https://github.com/next-step/spring-hellowolrd/tree/auth)
 ### 7. Spring Configuration
