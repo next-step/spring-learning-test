@@ -17,7 +17,7 @@ import static org.assertj.core.api.Assertions.assertThat;
  */
 class JavaConfigTest {
     @Test
-    void main() {
+    void javaConfig() {
         ApplicationContext context = new AnnotationConfigApplicationContext(HelloApplication.class);
         String[] beanDefinitionNames = context.getBeanDefinitionNames();
         System.out.println(Arrays.toString(beanDefinitionNames));
