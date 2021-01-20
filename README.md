@@ -7,4 +7,4 @@
 ### 4. [Spring CORE](https://github.com/next-step/spring-hellowolrd/tree/core)
 ### 5. [Spring MVC Config](https://github.com/next-step/spring-hellowolrd/tree/mvc-config)
 ### 6. [Spring Auth](https://github.com/next-step/spring-hellowolrd/tree/auth)
-### 7. Spring Configuration
+### 7. [Spring Configuration](https://github.com/next-step/spring-learning-test/tree/config)
