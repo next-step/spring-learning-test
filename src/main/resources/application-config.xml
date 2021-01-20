@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="userRepository" class="nextstep.helloworld.core.xmlConfig.UserRepository"/>
+
+    <bean id="userService" class="nextstep.helloworld.core.xmlConfig.UserService">
+        <property name="userRepository" ref="userRepository"/>
+    </bean>
+</beans>
