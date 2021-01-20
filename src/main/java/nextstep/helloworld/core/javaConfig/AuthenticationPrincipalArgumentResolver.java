@@ -10,4 +10,8 @@ public class AuthenticationPrincipalArgumentResolver {
     public String findMemberName() {
         return authService.findMemberName();
     }
+
+    public AuthService getAuthService() {
+        return authService;
+    }
 }
