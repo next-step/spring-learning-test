@@ -19,6 +19,7 @@ public class SimpleInsertDao {
     /**
      * Map +
      * insertActor.executeAndReturnKey
+     * id를 포함한 Customer 객체를 반환하세요
      */
     public Customer insertWithMap(Customer customer) {
         return null;
@@ -27,6 +28,7 @@ public class SimpleInsertDao {
     /**
      * SqlParameterSource +
      * insertActor.executeAndReturnKey
+     * id를 포함한 Customer 객체를 반환하세요
      */
     public Customer insertWithBeanPropertySqlParameterSource(Customer customer) {
         return null;
