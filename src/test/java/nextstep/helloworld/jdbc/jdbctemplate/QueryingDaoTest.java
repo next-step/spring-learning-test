@@ -63,4 +63,11 @@ public class QueryingDaoTest {
 
         assertThat(customers).hasSize(4);
     }
+
+    @Test
+    void findCustomerByFirstName() {
+        List<Customer> customers = queryingDAO.findCustomerByFirstName("Josh");
+
+        assertThat(customers).hasSize(2);
+    }
 }
