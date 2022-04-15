@@ -1,4 +1,4 @@
-package nextstep.helloworld.core.environment;
+package nextstep.helloworld.config.environment;
 
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -9,6 +9,6 @@ import org.springframework.context.annotation.PropertySource;
 // TODO: nextstep.helloworld.core.environment 내에 있는 스프링 빈을 스캔하기
 @Configuration
 @PropertySource("classpath:application.properties")
-@ComponentScan("nextstep.helloworld.core.environment")
+@ComponentScan("nextstep.helloworld.config.environment")
 public class ValueConfig {
 }

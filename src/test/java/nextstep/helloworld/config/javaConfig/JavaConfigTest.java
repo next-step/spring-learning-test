@@ -1,4 +1,4 @@
-package nextstep.helloworld.core.javaConfig;
+package nextstep.helloworld.config.javaConfig;
 
 import nextstep.helloworld.HelloApplication;
 import org.junit.jupiter.api.Test;

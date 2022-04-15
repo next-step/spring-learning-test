@@ -1,4 +1,4 @@
-package nextstep.helloworld.core.javaConfig;
+package nextstep.helloworld.config.javaConfig;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

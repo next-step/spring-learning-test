@@ -1,4 +1,4 @@
-package nextstep.helloworld.core.environment;
+package nextstep.helloworld.config.environment;
 
 public class JwtTokenKeyProvider {
     private String secretKey;

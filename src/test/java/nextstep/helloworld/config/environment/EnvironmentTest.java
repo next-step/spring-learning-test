@@ -1,4 +1,4 @@
-package nextstep.helloworld.core.environment;
+package nextstep.helloworld.config.environment;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.context.ApplicationContext;
