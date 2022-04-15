@@ -1,4 +1,4 @@
-package nextstep.helloworld.core.javaConfig;
+package nextstep.helloworld.config.javaConfig;
 
 public class AuthService {
     public String findMemberName() {

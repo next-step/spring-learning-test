@@ -1,4 +1,4 @@
-package nextstep.helloworld.core.environment;
+package nextstep.helloworld.config.environment;
 
 // TODO: 컴포넌트 스캔을 통한 빈 등록
 public class JwtTokenExpireProvider {

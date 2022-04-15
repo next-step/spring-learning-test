@@ -1,4 +1,4 @@
-package nextstep.helloworld.core.javaConfig;
+package nextstep.helloworld.config.javaConfig;
 
 // TODO: Java-based Configuration을 하기 위한 클래스로 지정하기
 public class AuthenticationPrincipalConfig {

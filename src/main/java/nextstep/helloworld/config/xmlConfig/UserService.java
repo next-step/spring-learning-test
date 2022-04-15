@@ -1,4 +1,4 @@
-package nextstep.helloworld.core.xmlConfig;
+package nextstep.helloworld.config.xmlConfig;
 
 public class UserService {
 
