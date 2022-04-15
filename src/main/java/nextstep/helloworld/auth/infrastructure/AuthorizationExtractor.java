@@ -1,4 +1,4 @@
-package nextstep.helloworld.infrastructure;
+package nextstep.helloworld.auth.infrastructure;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.Enumeration;

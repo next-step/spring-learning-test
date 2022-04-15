@@ -1,10 +1,10 @@
-package nextstep.helloworld;
+package nextstep.helloworld.auth;
 
 import io.restassured.RestAssured;
 import io.restassured.authentication.FormAuthConfig;
-import nextstep.helloworld.dto.MemberResponse;
-import nextstep.helloworld.dto.TokenRequest;
-import nextstep.helloworld.dto.TokenResponse;
+import nextstep.helloworld.auth.dto.MemberResponse;
+import nextstep.helloworld.auth.dto.TokenRequest;
+import nextstep.helloworld.auth.dto.TokenResponse;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

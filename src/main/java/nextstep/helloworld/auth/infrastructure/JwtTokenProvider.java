@@ -1,4 +1,4 @@
-package nextstep.helloworld.infrastructure;
+package nextstep.helloworld.auth.infrastructure;
 
 import io.jsonwebtoken.*;
 import org.springframework.beans.factory.annotation.Value;
