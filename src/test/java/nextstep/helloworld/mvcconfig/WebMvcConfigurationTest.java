@@ -1,4 +1,4 @@
-package nextstep.helloworld.auth;
+package nextstep.helloworld.mvcconfig;
 
 import io.restassured.RestAssured;
 import io.restassured.response.ExtractableResponse;
