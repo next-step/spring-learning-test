@@ -1,11 +1,11 @@
-package nextstep.helloworld.ui;
+package nextstep.helloworld.auth.ui;
 
-import nextstep.helloworld.application.AuthService;
-import nextstep.helloworld.application.AuthorizationException;
-import nextstep.helloworld.dto.MemberResponse;
-import nextstep.helloworld.dto.TokenRequest;
-import nextstep.helloworld.dto.TokenResponse;
-import nextstep.helloworld.infrastructure.AuthorizationExtractor;
+import nextstep.helloworld.auth.application.AuthService;
+import nextstep.helloworld.auth.application.AuthorizationException;
+import nextstep.helloworld.auth.dto.MemberResponse;
+import nextstep.helloworld.auth.infrastructure.AuthorizationExtractor;
+import nextstep.helloworld.auth.dto.TokenRequest;
+import nextstep.helloworld.auth.dto.TokenResponse;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;

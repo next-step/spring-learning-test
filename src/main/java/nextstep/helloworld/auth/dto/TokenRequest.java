@@ -1,4 +1,4 @@
-package nextstep.helloworld.dto;
+package nextstep.helloworld.auth.dto;
 
 public class TokenRequest {
     private String email;

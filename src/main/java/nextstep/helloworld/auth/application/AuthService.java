@@ -1,9 +1,9 @@
-package nextstep.helloworld.application;
+package nextstep.helloworld.auth.application;
 
-import nextstep.helloworld.dto.MemberResponse;
-import nextstep.helloworld.dto.TokenRequest;
-import nextstep.helloworld.dto.TokenResponse;
-import nextstep.helloworld.infrastructure.JwtTokenProvider;
+import nextstep.helloworld.auth.dto.MemberResponse;
+import nextstep.helloworld.auth.dto.TokenRequest;
+import nextstep.helloworld.auth.dto.TokenResponse;
+import nextstep.helloworld.auth.infrastructure.JwtTokenProvider;
 import org.springframework.stereotype.Service;
 
 @Service

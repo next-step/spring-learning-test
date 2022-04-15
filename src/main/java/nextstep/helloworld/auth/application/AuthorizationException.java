@@ -1,4 +1,4 @@
-package nextstep.helloworld.application;
+package nextstep.helloworld.auth.application;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
