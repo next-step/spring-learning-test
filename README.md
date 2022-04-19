@@ -13,7 +13,7 @@
 - 프로덕션 코드의 주석에 기재된 메서드 시그니쳐와 클래스이름 힌트를 참고하기 
 - 테스트는 [jdbc](https://github.com/next-step/spring-learning-test/tree/jdbc/src/test/java/nextstep/helloworld/jdbc) 디렉토리 하위에 위치
 - [학습 테스트 활용 방법](https://github.com/next-step/spring-learning-test/blob/jdbc/README.md#%ED%95%99%EC%8A%B5-%ED%85%8C%EC%8A%A4%ED%8A%B8-%ED%99%9C%EC%9A%A9-%EB%B0%A9%EB%B2%95)를 참고하여 학습 및 기능 구현
-- 완성 브랜치 [jdbc-sample](https://github.com/next-step/spring-learning-test/tree/jdbc-sample)를 참고해서 진행해도 좋음 `git checkout mvc-sample`
+- 완성 브랜치 [jdbc-sample](https://github.com/next-step/spring-learning-test/tree/jdbc-sample)를 참고해서 진행해도 좋음 `git checkout jdbc-sample`
 
 ## 학습 테스트 활용 방법
 ---
