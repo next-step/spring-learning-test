@@ -11,6 +11,8 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import static org.assertj.core.api.Assertions.assertThat;
+
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.NONE)
 public class SimpleInsertDaoTest {
     @Autowired
@@ -33,13 +35,13 @@ public class SimpleInsertDaoTest {
 
     @Test
     void insertWithMap() {
-        Customer customer = new Customer("Leonor", "Watling");
-        simpleInsertDao.insertWithMap(customer);
+        Customer customer = simpleInsertDao.insertWithMap(new Customer("Leonor", "Watling"));
+        assertThat(customer).isNotNull();
     }
 
     @Test
     void insertWithBeanPropertySqlParameterSource() {
-        Customer customer = new Customer("Leonor", "Watling");
-        simpleInsertDao.insertWithBeanPropertySqlParameterSource(customer);
+        Customer customer = simpleInsertDao.insertWithBeanPropertySqlParameterSource(new Customer("Leonor", "Watling"));
+        assertThat(customer).isNotNull();
     }
 }
