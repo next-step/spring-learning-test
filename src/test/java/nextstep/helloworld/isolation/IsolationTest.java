@@ -2,7 +2,6 @@ package nextstep.helloworld.isolation;
 
 import nextstep.helloworld.domain.Payment;
 import nextstep.helloworld.domain.PaymentDao;
-import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -19,7 +18,6 @@ class IsolationTest {
     @Autowired
     public PaymentDao paymentDao;
 
-    @DisplayName("원래 성공하는 테스트")
     @Test
     void readUncommitted() {
         List<Payment> payments = upperTransactionService.readUncommitted();

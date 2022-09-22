@@ -40,7 +40,7 @@ public class PaymentService {
     /**
      * 상위 트랜잭션에 영향을 받지 않고 트랜잭션을 무시
      */
-    @Transactional
+    @Transactional(propagation = Propagation.NOT_SUPPORTED)
     public void saveWithNoTransaction() {
         Payment payment = new Payment("이름", 22000);
         Play play = new Play("이름", LocalDateTime.now());

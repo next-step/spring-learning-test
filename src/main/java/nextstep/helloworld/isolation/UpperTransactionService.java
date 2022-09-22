@@ -37,6 +37,7 @@ public class UpperTransactionService {
     /**
      * 하위 트랜잭션에서 변경된 내용이 반영되지 않음
      */
+    @Transactional(isolation = Isolation.REPEATABLE_READ)
     public boolean repeatableRead(String newName) {
         Payment payment = paymentDao.findById(1L);
         lowerPaymentService.updateNameWithRepeatableRead(1L, newName);
@@ -48,6 +49,7 @@ public class UpperTransactionService {
     /**
      * 여러 트랜잭션이 동시에 같은 정보를 액세스 할 수 없음
      */
+    @Transactional(isolation = Isolation.SERIALIZABLE)
     public boolean serializable() {
         List<Payment> payments = paymentDao.findAll();
         lowerPaymentService.saveWithSerializable(new Payment("이름", 22_000));

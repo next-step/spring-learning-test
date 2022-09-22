@@ -17,6 +17,7 @@ public class PlayService {
     /**
      * 새로운 트랜잭션을 만들지 않고 상위 트랜잭션에 참여
      */
+    @Transactional(propagation = Propagation.REQUIRED)
     public void saveWithRequired(Play play) {
         playDao.save(play);
     }
@@ -25,6 +26,7 @@ public class PlayService {
      * 상위 트랜잭션과 무관하게 새로운 트랜잭션이 생성됨
      * 상위 작업이 실패하더라도 해당 작업은 영향받지 않음
      */
+    @Transactional(propagation = Propagation.REQUIRES_NEW)
     public void saveWithRequiresNew(Play play) {
         playDao.save(play);
     }
@@ -32,7 +34,7 @@ public class PlayService {
     /**
      * 상위 트랜잭션에 영향을 받지 않고 트랜잭션을 무시
      */
-    @Transactional
+    @Transactional(propagation = Propagation.NOT_SUPPORTED)
     public void saveWithNoTransaction(Play play) {
         playDao.save(play);
     }

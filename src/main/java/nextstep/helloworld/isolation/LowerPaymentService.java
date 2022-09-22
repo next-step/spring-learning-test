@@ -20,6 +20,7 @@ public class LowerPaymentService {
     /**
      * 상위 트랜잭션이 커밋하지 않은 정보도 읽을 수 있음
      */
+    @Transactional(isolation = Isolation.READ_UNCOMMITTED, propagation = Propagation.REQUIRES_NEW)
     public List<Payment> findAllWithReadUncommitted() {
         return paymentDao.findAll();
     }
@@ -28,6 +29,7 @@ public class LowerPaymentService {
      * 상위 트랜잭션이 커밋하지 않은 정보는 읽을 수 없지만
      * 하위 트랜잭션에서 해당 로우를 수정할 수 있음
      */
+    @Transactional(isolation = Isolation.READ_COMMITTED, propagation = Propagation.REQUIRES_NEW)
     public Payment findByIdWithReadCommitted(Long id) {
         return paymentDao.findById(id);
     }
