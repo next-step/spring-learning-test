@@ -62,4 +62,17 @@ class AuthControllerTest {
 
         assertThat(member.getEmail()).isEqualTo(EMAIL);
     }
+
+    @Test
+    void basicLogin() {
+        MemberResponse member = RestAssured
+                .given().log().all()
+                .auth().preemptive().basic(EMAIL, PASSWORD)
+                .accept(MediaType.APPLICATION_JSON_VALUE)
+                .when().get("/members/my")
+                .then().log().all()
+                .statusCode(HttpStatus.OK.value()).extract().as(MemberResponse.class);
+
+        assertThat(member.getEmail()).isEqualTo(EMAIL);
+    }
 }
