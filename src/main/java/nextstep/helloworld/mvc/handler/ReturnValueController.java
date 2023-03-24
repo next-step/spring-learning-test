@@ -3,6 +3,7 @@ package nextstep.helloworld.mvc.handler;
 import nextstep.helloworld.mvc.domain.User;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
@@ -23,5 +24,9 @@ public class ReturnValueController {
 //
 //    public void responseEntityFor400() {
 //        return ResponseEntity.badRequest().build();
+//    }
+//
+//    public void thymeleaf() {
+//        return "sample";
 //    }
 }

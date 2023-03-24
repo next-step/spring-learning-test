@@ -9,6 +9,7 @@ import org.springframework.boot.web.server.LocalServerPort;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 
+import static org.hamcrest.Matchers.containsString;
 import static org.hamcrest.core.Is.is;
 
 /**
@@ -80,5 +81,19 @@ public class ReturnValueTest {
                 .when().get("/return-value/members")
                 .then().log().all()
                 .statusCode(HttpStatus.BAD_REQUEST.value());
+    }
+
+    /**
+     * ReturnValueController > thymeleaf 메서드
+     */
+    @DisplayName("Return Value - Thymeleaf")
+    @Test
+    void thymeleaf() {
+        RestAssured.given().log().all()
+                .accept(MediaType.TEXT_HTML_VALUE)
+                .when().get("/return-value/thymeleaf")
+                .then().log().all()
+                .statusCode(HttpStatus.OK.value())
+                .body(containsString("Hello"));
     }
 }
