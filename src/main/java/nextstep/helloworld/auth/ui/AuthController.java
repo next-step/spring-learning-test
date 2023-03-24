@@ -95,4 +95,19 @@ public class AuthController {
         MemberResponse member = authService.findMemberByToken(token);
         return ResponseEntity.ok().body(member);
     }
+
+    /**
+     * ex) request sample
+     * <p>
+     * GET /members/my HTTP/1.1
+     * authorization: Basic ZW1haWxAZW1haWwuY29tOjEyMzQ=
+     * accept: application/json
+     */
+    @GetMapping("/members/my")
+    public ResponseEntity findMyInfo(HttpServletRequest request) {
+        // TODO: authorization 헤더의 Basic 값을 추출하기
+        String email = "";
+        MemberResponse member = authService.findMember(email);
+        return ResponseEntity.ok().body(member);
+    }
 }
