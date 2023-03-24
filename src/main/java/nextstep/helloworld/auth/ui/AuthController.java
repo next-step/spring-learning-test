@@ -2,10 +2,13 @@ package nextstep.helloworld.auth.ui;
 
 import nextstep.helloworld.auth.application.AuthService;
 import nextstep.helloworld.auth.application.AuthorizationException;
+import nextstep.helloworld.auth.dto.AuthInfo;
 import nextstep.helloworld.auth.dto.MemberResponse;
 import nextstep.helloworld.auth.infrastructure.AuthorizationExtractor;
 import nextstep.helloworld.auth.dto.TokenRequest;
 import nextstep.helloworld.auth.dto.TokenResponse;
+import nextstep.helloworld.auth.infrastructure.BasicAuthorizationExtractor;
+import nextstep.helloworld.auth.infrastructure.BearerAuthorizationExtractor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -21,6 +24,8 @@ public class AuthController {
     private static final String SESSION_KEY = "USER";
     private static final String USERNAME_FIELD = "email";
     private static final String PASSWORD_FIELD = "password";
+    private AuthorizationExtractor<String> bearerAuthorizationExtractor = new BearerAuthorizationExtractor();
+    private AuthorizationExtractor<AuthInfo> basicAuthorizationExtractor = new BasicAuthorizationExtractor();
     private AuthService authService;
 
 
@@ -58,7 +63,7 @@ public class AuthController {
 
     @GetMapping("/members/you")
     public ResponseEntity findYourInfo(HttpServletRequest request) {
-        String token = AuthorizationExtractor.extract(request);
+        String token = bearerAuthorizationExtractor.extract(request);
         MemberResponse member = authService.findMemberByToken(token);
         return ResponseEntity.ok().body(member);
     }
@@ -72,8 +77,14 @@ public class AuthController {
      */
     @GetMapping("/members/my")
     public ResponseEntity findMyInfo(HttpServletRequest request) {
-        // TODO: authorization 헤더의 Basic 값을 추출하기
-        String email = "";
+        AuthInfo authInfo = basicAuthorizationExtractor.extract(request);
+        String email = authInfo.getEmail();
+        String password = authInfo.getPassword();
+
+        if (authService.checkInvalidLogin(email, password)) {
+            throw new AuthorizationException();
+        }
+
         MemberResponse member = authService.findMember(email);
         return ResponseEntity.ok().body(member);
     }
