@@ -17,9 +17,9 @@ public class PropertySourceConfig {
         this.env = env;
     }
 
-    // TODO: application.properties의 security-jwt-token-secret-key 값을 활용하여 JwtTokenKeyProvider를 빈으로 등록하기
+    // TODO: application.properties의 security.jwt.token.secret-key 값을 활용하여 JwtTokenKeyProvider를 빈으로 등록하기
     @Bean
     public JwtTokenKeyProvider jwtTokenKeyProvider() {
-        return new JwtTokenKeyProvider(env.getProperty("security-jwt-token-secret-key"));
+        return new JwtTokenKeyProvider(env.getProperty("security.jwt.token.secret-key"));
     }
 }
