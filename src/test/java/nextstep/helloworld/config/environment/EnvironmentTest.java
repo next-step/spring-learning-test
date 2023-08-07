@@ -1,31 +1,35 @@
 package nextstep.helloworld.config.environment;
 
 import org.junit.jupiter.api.Test;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-
-import java.util.Arrays;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.core.env.Environment;
+import org.springframework.core.env.MutablePropertySources;
+import org.springframework.test.context.ActiveProfiles;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+@SpringBootTest
+@ActiveProfiles("test")
 class EnvironmentTest {
-    @Test
-    void key() {
-        ApplicationContext context = new AnnotationConfigApplicationContext(PropertySourceConfig.class);
-        String[] beanDefinitionNames = context.getBeanDefinitionNames();
-        System.out.println(Arrays.toString(beanDefinitionNames));
 
-        JwtTokenKeyProvider jwtTokenKeyProvider = context.getBean(JwtTokenKeyProvider.class);
-        assertThat(jwtTokenKeyProvider.getSecretKey()).isEqualTo("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIiLCJuYW1lIjoiSm9obiBEb2UiLCJpYXQiOjE1MTYyMzkwMjJ9.ih1aovtQShabQ7l0cINw4k1fagApg3qLWiB8Kt59Lno");
+    @Autowired
+    private ConfigurableApplicationContext context;
+
+    @Test
+    void environment() {
+        Environment env = context.getEnvironment();
+        String key = env.getProperty("security.jwt.token.expire-length");
+        assertThat(key).isEqualTo("11");
+
+        String[] activeProfiles = env.getActiveProfiles();
+        assertThat(activeProfiles).contains("test");
     }
 
     @Test
-    void expire() {
-        ApplicationContext context = new AnnotationConfigApplicationContext(ValueConfig.class);
-        String[] beanDefinitionNames = context.getBeanDefinitionNames();
-        System.out.println(Arrays.toString(beanDefinitionNames));
-
-        JwtTokenExpireProvider jwtTokenExpireProvider = context.getBean(JwtTokenExpireProvider.class);
-        assertThat(jwtTokenExpireProvider.getValidityInMilliseconds()).isEqualTo(3600000);
+    void propertySources() {
+        MutablePropertySources propertySources = context.getEnvironment().getPropertySources();
+        assertThat(propertySources).isNotEmpty();
     }
 }
